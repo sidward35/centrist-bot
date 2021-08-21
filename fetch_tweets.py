@@ -17,4 +17,4 @@ def run(users, max_results):
 		for item in tweets_list:
 			if 'https://t.co/' in item:
 				item = item[0:item.index('https://t.co/')]
-			text_file_1.write('%s\n' % item)
+			text_file_1.write('%s\n' % item.replace('&amp;','&'))

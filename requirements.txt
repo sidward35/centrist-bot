@@ -93,6 +93,7 @@ tornado==6.1
 torrequest==0.1.0
 tqdm==4.62.0
 traitlets==5.0.5
+tweepy==3.10.0
 typing-extensions==3.10.0.0
 tzlocal==2.1
 urllib3==1.26.6

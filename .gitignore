@@ -3,4 +3,4 @@
 *.db-journal
 *.json
 *.code-workspace
-tweets.txt
+tw*.txt

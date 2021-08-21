@@ -2,6 +2,8 @@
 
 Balanced as all things should be.
 
+Check out the bot [@centrist_bot](https://twitter.com/centrist_bot)
+
 ## Resources
 - [How to Scrape Tweets With snscrape](https://betterprogramming.pub/how-to-scrape-tweets-with-snscrape-90124ed006af)
 - [Python implementation of a Markov Text Generator](https://github.com/codebox/markov-text)
