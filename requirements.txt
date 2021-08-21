@@ -1,4 +1,4 @@
-aiohttp==3.7.4.post0
+aiohttp==3.7.4
 altair==4.1.0      
 argon2-cffi==20.1.0
 asgiref==3.4.1     
