@@ -1,6 +1,6 @@
 # centrist-bot
 
-Balanced as all things should be. Fetches tweets from U.S. politicians (5,000 tweets from each of the two major parties) and combines them to generate new ones.
+Balanced as all things should be. Fetches tweets from [U.S. politicians](https://github.com/sidward35/centrist-bot/blob/main/run_bot.py#L3) (~12,500 tweets from each of the two major parties) and combines them to generate new ones.
 
 Check out the daily posts [@centrist_bot](https://twitter.com/centrist_bot)
 

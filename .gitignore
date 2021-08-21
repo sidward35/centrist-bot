@@ -4,3 +4,4 @@
 *.json
 *.code-workspace
 tw*.txt
+config.py
