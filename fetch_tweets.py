@@ -15,6 +15,14 @@ def run(users, max_results):
 
 	with open('tweets.txt', 'w', encoding="utf-8") as  text_file_1:
 		for item in tweets_list:
+			 if(check_duplicate(item)):
+				continue
 			if 'https://t.co/' in item:
 				item = item[0:item.index('https://t.co/')]
 			text_file_1.write('%s\n' % item)
+
+def check_duplicate(tweet):
+	with open('tweets.txt', 'r', encoding="utf-8") as text_file_1:
+		for recorded_tweet in text_file_1:
+			if(tweet == recorded_tweet):
+				return true
