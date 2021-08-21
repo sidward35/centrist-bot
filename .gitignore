@@ -3,3 +3,4 @@
 *.db-journal
 *.json
 *.txt
+*.code-workspace
