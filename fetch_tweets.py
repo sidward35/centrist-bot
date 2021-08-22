@@ -1,28 +1,24 @@
 import os
 import pandas as pd
+import string
 
 def run(users, max_results):
-	try:
-		os.remove('tweets.json')
-	except:
-		pass
 	for i in range(len(users)):
 		print('['+str(i+1)+'/'+str(len(users))+'] Fetching '+users[i]+'\'s tweets...')
 		os.system("snscrape --jsonl --max-results "+str(max_results)+" twitter-search 'from:"+users[i]+"'>> tweets.json")
 
 	tweets_df = pd.read_json('tweets.json', lines=True)
+	os.remove('tweets.json')
 	tweets_list = tweets_df.content.tolist()
+	tweets_string = "".join(tweets_list)
+	tweets_words_list = tweets_string.split(' ')
+	tweets_words_list = list(set(tweets_words_list))
 
-	with open('tweets.txt', 'w', encoding="utf-8") as  text_file_1:
-		for item in tweets_list:
-			 if(check_duplicate(item)):
-				continue
-			if 'https://t.co/' in item:
-				item = item[0:item.index('https://t.co/')]
-			text_file_1.write('%s\n' % item)
+	tweets_unique_words = []
+	for item in tweets_words_list:
+		item = item.strip().lower().replace('&amp;','&')
+		item = item.translate(str.maketrans('', '', string.punctuation))
+		if not 'https' in item and not item in tweets_unique_words:
+			tweets_unique_words.append(item)
 
-def check_duplicate(tweet):
-	with open('tweets.txt', 'r', encoding="utf-8") as text_file_1:
-		for recorded_tweet in text_file_1:
-			if(tweet == recorded_tweet):
-				return true
+	return tweets_unique_words

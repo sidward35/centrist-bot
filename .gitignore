@@ -1,6 +1,3 @@
 *.pyc
-*.db
-*.db-journal
 *.json
-*.code-workspace
-tweets.txt
+config.py
