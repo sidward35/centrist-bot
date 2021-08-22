@@ -1,7 +1,8 @@
-import nltk
 import random
+import nltk
+nltk.download('averaged_perceptron_tagger')
 
-def run(words, count):
+def run(words):
 	pos_dict = {}
 	for word in words:
 		tag = tokenize(word)
@@ -14,13 +15,13 @@ def run(words, count):
 				list = pos_dict[key]
 				list.append(value)
 				pos_dict[key] = list
-	sentence_template = ["NN", "VB", "NN"]
+	sentence_template_options = [['PRP', 'VB', 'PRP$', 'JJ', 'JJ', 'NNS', 'IN', 'VB', 'NNP']]
+	sentence_template = sentence_template_options[random.randint(0,len(sentence_template_options)-1)]
 	tweet = ""
 	for i in sentence_template:
 		tweet+=pos_dict[i][random.randint(0,len(pos_dict[i])-1)] + " "
 	print(tweet)
-	new_tweets = ['']
-	return new_tweets
+	return tweet
 
 def tokenize(word):
 	tokens = nltk.word_tokenize(word)
