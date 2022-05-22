@@ -32,6 +32,7 @@ def run(count):
 	r = requests.post("https://api.deepai.org/api/text-generator", data={'text': base_string}, headers={'api-key': config.deepai_key})
 	new_tweet = r.json().get('output').replace(base_string,'').replace('\\xa0','')
 	new_tweet = new_tweet[0:280] if len(new_tweet)>280 else new_tweet
+	new_tweet = new_tweet[0:new_tweet.rfind('.')+1]
 
 	new_tweet = fix_grammar([new_tweet])[0]
 	print(new_tweet)
