@@ -1,7 +1,7 @@
 import fetch_tweets, create_tweets, post_tweets
 
 users = ['tedcruz', 'marcorubio', 'johncornyn', 'senjoniernst', 'repdancrenshaw', 'edmarkey', 'dickdurbin', 'senatorshaheen', 'chrismurphyct', 'corybooker']
-max_results = 25 # max tweets to fetch from a single user
+max_results = 2500 # max tweets to fetch from a single user
 new_tweets_count = 3
 
 fetch_tweets.run(users, max_results) # get politicians' tweets from usernames above
