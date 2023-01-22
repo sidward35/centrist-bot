@@ -8,7 +8,7 @@ def run(users, max_results):
 		pass
 	for i in range(len(users)):
 		print('['+str(i+1)+'/'+str(len(users))+'] Fetching '+users[i]+'\'s tweets...')
-		os.system("snscrape --jsonl --max-results "+str(max_results)+" twitter-search 'from:"+users[i]+"'>> tweets.json")
+		os.system("snscrape --jsonl --max-results "+str(max_results)+" twitter-search 'from:"+users[i]+"' --top >> tweets.json")
 
 	tweets_df = pd.read_json('tweets.json', lines=True)
 	tweets_list = tweets_df.content.tolist()
